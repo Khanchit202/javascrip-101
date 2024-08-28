@@ -1,24 +1,42 @@
 "use client"
-import React, {useState} from 'react'
-
-function MyButton() {
-    return (<button>Click me</button>)
-  }
+import React, {useEffect, useState} from 'react'
 
 export default function Page() {
 
-    const [username, setUser] = useState({username:""})
+    const [count, setCount] = useState(0);
+    const [title, setTitle] = useState("My title...");
 
-    function handleClick(event) {
-        let usernameValue = event.target.value;
-        setUser({...username, username: usernameValue})
+    useEffect(()=>{
+        console.log("เปิดแอปแล้ว");
+        setCount(100);
+    },[])
+
+    useEffect(()=> {
+        console.log("Count เปลี่ยนหน้าแล้ว");
+        if (count === 120){
+            setTitle("Count ถึง 120 แล้ว");
+        }
+        if (count === 130){
+            setTitle("Count ถึง 130 แล้ว");
+        }
+        if (count === 140){
+            setTitle("Count ถึง 140 แล้ว");
+        }
+        if (count === 150){
+            setTitle("Count หยุดดดดดดดดดดดดดดดดดดดดดดดดดดดดด");
+        }
+    }, [count]); // Ensure this effect runs only when `count` changes
+
+    function handleClick(){
+        setCount(count + 1);
     }
 
     return (
 
     <div>
-        <h1>Username : {username.username}</h1>
-        <input type="text" placeholder='username' value={username.username} onChange={handleClick}/>
+        <h1>Count : {count}</h1>
+        <h1>{title}</h1>
+        <button onClick={handleClick}> +Add </button>
     </div>
 
     );
