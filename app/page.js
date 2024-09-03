@@ -115,7 +115,8 @@ export function Home() {
       </Typography>
     </ul>
   );
-  
+}
+
 export default function Home() {
   return (
     <>
