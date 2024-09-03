@@ -50,7 +50,7 @@ const GachaMachine = () => {
       name: "Lychee Berry",
       desc: "THE MONSTERS - Tasty Macarons Vinyl Face",
       image: "https://global-static.popmart.com/globalAdmin/1720611748486____%E5%BD%A2%E8%B1%A15____.png",
-      price: 600,
+      price: 550,
       stock: 1,
     },
   ];
